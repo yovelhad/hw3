@@ -1,2 +1,2 @@
-public class Trap extends Enemy{
-}
+//public class Trap extends Enemy{
+//}

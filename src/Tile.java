@@ -1,26 +1,17 @@
-abstract class Tile implements Visited,Visitor{
-    char Tile;
+public abstract class Tile{
+    char tile;
     Position position;
-    @Override
-    public abstract boolean accept(Visitor v);
-
-    @Override
-    public boolean visit(Empty empty) {
-        return false;
+    public Position getPosition() {
+        return position;
     }
-
-    @Override
-    public boolean visit(Wall wall) {
-        return false;
+    public void setPosition(Position p){
+        position = p;
     }
-
-    @Override
-    public boolean visit(Enemy enemy) {
-        return false;
+    public void swapPositions(Unit u){
+        Position tempPosition = u.getPosition();
+        u.setPosition(position);
+        position = tempPosition;
+        System.out.println("position swapped");
     }
-
-    @Override
-    public boolean visit(Player player) {
-        return false;
-    }
+    public abstract void accept(Unit unit);
 }

@@ -5,18 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ab426b0-a989-4305-9100-16a02b3c33a0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Empty.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Enemy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Monster.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Position.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Tile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Trap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Unit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Visited.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Visitor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Wall.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Health.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Empty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Empty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Monster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Position.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Trap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Trap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Unit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Unit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Visited.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Visitor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wall.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,11 +74,36 @@
       <option name="presentableId" value="Default" />
       <updated>1686059580524</updated>
       <workItem from="1686059581757" duration="344000" />
-      <workItem from="1686065280638" duration="2971000" />
+      <workItem from="1686065280638" duration="3506000" />
+      <workItem from="1686257322100" duration="35000" />
+      <workItem from="1686644280554" duration="849000" />
+      <workItem from="1686648039555" duration="7437000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

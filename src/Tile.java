@@ -14,4 +14,8 @@ public abstract class Tile{
         System.out.println("position swapped");
     }
     public abstract void accept(Unit unit);
+
+    public char getSymbol() {
+        return tile;
+    }
 }

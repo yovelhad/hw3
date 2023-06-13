@@ -1,22 +1,24 @@
 public class Enemy extends Unit{
-    Integer experience;
-    Integer playerLevel;
+    Integer experienceValue;
+
 
     public Enemy(Position p ){
-        tile = '@' ;
         position = p ;
-        experience=0 ;
-        playerLevel = 1 ;
 
     }
     @Override
     public void combat(Unit unit) {
+        Integer playerAttVal = unit.attackRole();
+        Integer enemyDefVal = this.defenseRole();
+
         System.out.println("player attacking.");
+
 
     }
 
     @Override
     public void onDeath(Unit unit) {
+
 
     }
 

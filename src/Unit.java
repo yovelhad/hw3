@@ -1,9 +1,13 @@
 import java.util.Random;
 
 public abstract class Unit extends Tile {
+    String name;
     Integer attackPoints;
     Integer defensePoints;
     Health health;
+    public Unit(Character tile){
+        super(tile);
+    }
 
     public void interact(Tile tile) {
         tile.accept(this);

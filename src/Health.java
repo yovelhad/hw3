@@ -1,9 +1,9 @@
 public class Health {
     private Integer healthPool;
     private  Integer healthAmount;
-    public Health(){
-        healthPool = 50;
-        healthAmount = 50;
+    public Health(int initialHealth){
+        healthPool = initialHealth;
+        healthAmount = initialHealth;
     }
     public Integer getPool(){
         return healthPool;

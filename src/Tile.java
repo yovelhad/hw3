@@ -1,6 +1,9 @@
 public abstract class Tile{
-    char tile;
+    Character tile;
     Position position;
+    public Tile(Character tile){
+        this.tile = tile;
+    }
     public Position getPosition() {
         return position;
     }

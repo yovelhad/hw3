@@ -14,6 +14,32 @@ public class TileFactory {
         playersList = initPlayers();
         enemiesMap = initEnemies();
     }
+    public void setPlayer(Player p){
+        selected=p;
+    }
+    public Tile getTile(Character c, Position p){
+        System.out.println("Factory for:" + c);
+        Tile returnValue;
+        switch (c){
+            case '#':
+                returnValue = produceWall(p);
+                break;
+            case '.':
+            case 'K':
+            case 'M':
+            case 'C':
+                returnValue = produceEmpty(p);
+                break;
+            case '@':
+                returnValue = selected;
+                returnValue.setPosition(p);
+                break;
+            default:
+                returnValue = enemiesMap.get(c).get();
+                returnValue.setPosition(p);
+        }
+        return returnValue;
+    }
 
     private Map<Character, Supplier<Enemy>> initEnemies() {
         List<Supplier<Enemy>> enemies = Arrays.asList(
@@ -48,6 +74,7 @@ public class TileFactory {
         );
     }
 
+
     public List<Player> listPlayers(){
         return playersList.stream().map(Supplier::get).collect(Collectors.toList());
     }
@@ -62,11 +89,10 @@ public class TileFactory {
 //		...
 //    }
 //
-//    public Empty produceEmpty(Position position, ...){
-//        ...
-//    }
-//
-//    public Wall produceWall(Position position, ...){
-//        ...
-//    }
+    public Empty produceEmpty(Position p){
+        return new Empty(p);
+    }
+    public Wall produceWall(Position p){
+        return new Wall(p);
+    }
 }

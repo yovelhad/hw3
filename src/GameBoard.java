@@ -1,3 +1,5 @@
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -6,11 +8,41 @@ import java.util.stream.Collectors;
 
 public class GameBoard {
     private List<Tile> tiles;
+    private  TileFactory factory;
+    private  Player activePlayer;
 
     public GameBoard(Tile[][] board){
         tiles = new ArrayList<>();
         for(Tile[] line : board){
             tiles.addAll(Arrays.asList(line));
+        }
+    }
+    public GameBoard(BufferedReader reader, Player activePlayer){
+        String line;
+        this.activePlayer = activePlayer;
+        factory = new TileFactory();
+        factory.setPlayer(activePlayer);
+        System.out.println("READ FILE:");
+        List<String> boardString = new ArrayList<>();
+        try {
+            while ((line = reader.readLine()) != null) {
+                boardString.add(line);
+                System.out.println(line);
+            }
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("Build board:");
+        Integer xAxis = boardString.get(0).length();
+        Integer yAxis = boardString.size();
+        Tile[][] gameBoard = new Tile[yAxis][xAxis];
+        for (int i =0; i< yAxis; i++){
+            line = boardString.get(i);
+            for (int j = 0; j<xAxis;j++ ){
+                Position tilePosition = new Position(j,i);
+                gameBoard[i][j] = factory.getTile(line.charAt(j),tilePosition);
+            }
         }
     }
 

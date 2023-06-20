@@ -5,17 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ab426b0-a989-4305-9100-16a02b3c33a0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Empty.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Enemy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Monster.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Position.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Tile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Trap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Unit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Visited.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Visitor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Wall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,5 +68,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

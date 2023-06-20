@@ -7,16 +7,10 @@ import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
 public class GameBoard {
-    private List<Tile> tiles;
+    private Tile[][] BoardTiles;
     private  TileFactory factory;
     private  Player activePlayer;
 
-    public GameBoard(Tile[][] board){
-        tiles = new ArrayList<>();
-        for(Tile[] line : board){
-            tiles.addAll(Arrays.asList(line));
-        }
-    }
     public GameBoard(BufferedReader reader, Player activePlayer){
         String line;
         this.activePlayer = activePlayer;
@@ -36,59 +30,39 @@ public class GameBoard {
         System.out.println("Build board:");
         Integer xAxis = boardString.get(0).length();
         Integer yAxis = boardString.size();
-        Tile[][] gameBoard = new Tile[yAxis][xAxis];
+        this.BoardTiles = new Tile[yAxis][xAxis];
         for (int i =0; i< yAxis; i++){
             line = boardString.get(i);
             for (int j = 0; j<xAxis;j++ ){
                 Position tilePosition = new Position(j,i);
-                gameBoard[i][j] = factory.getTile(line.charAt(j),tilePosition);
+                BoardTiles[i][j] = factory.getTile(line.charAt(j),tilePosition);
             }
         }
     }
 
     public Tile get(int x, int y) {
-        for(Tile t : tiles){
-            if (t.getPosition().equals(Position.at(x, y))){
-                return t;
-            }
-        }
+        if(x < BoardTiles[0].length && y < BoardTiles.length )
+            return BoardTiles[y][x];
+        else
         // Throw an exception if no such tile.
         throw new NoSuchElementException("No such tile exist.");
     }
 
     public void remove(Enemy e) {
-        tiles.remove(e);
         Position p = e.getPosition();
-        tiles.add(new Empty(p));
+        Empty toReplace =  factory.produceEmpty(p);
+        BoardTiles[p.getY()][p.getX()] = toReplace;
     }
 
-    @Override
-    public String toString() {
-        tiles = tiles.stream().sorted().collect(Collectors.toList());
-        StringBuilder stringBuilder = new StringBuilder();
-        int maxX = 0;
-        int maxY = 0;
-
-        // Find the maximum x and y coordinates
-        for (Tile tile : tiles) {
-            Position position = tile.getPosition();
-            if (position.getX() > maxX) {
-                maxX = position.getX();
+    public void printBoard() {
+        for (int i =0; i< BoardTiles.length; i++){
+            Tile[] line= BoardTiles[i];
+            for (int j = 0; j<line.length; j++ ){
+                System.out.print(BoardTiles[i][j].getSymbol());
             }
-            if (position.getY() > maxY) {
-                maxY = position.getY();
-            }
+            System.out.println();
         }
 
-        // Generate the string representation of the board
-        for (int y = 0; y <= maxY; y++) {
-            for (int x = 0; x <= maxX; x++) {
-                Tile tile = get(x, y);
-                stringBuilder.append(tile.getSymbol());
-            }
-            stringBuilder.append("\n");
-        }
-
-        return stringBuilder.toString();
     }
+
 }

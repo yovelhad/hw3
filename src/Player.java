@@ -9,6 +9,8 @@ public class Player extends Unit{
         this.health = new Health(health);
         this.attackPoints = attack;
         this.defensePoints = defence;
+        this.experience = 0;
+        this.playerLevel = 1;
     }
     @Override
     public void combat(Unit unit) {
@@ -45,6 +47,14 @@ public class Player extends Unit{
             attackPoints = attackPoints + (4 * playerLevel);
             defensePoints = defensePoints + (1 * playerLevel);
         }
+    }
+    public String expToString(){
+        return experience+"/"+(50*playerLevel);
+    }
+    @Override
+    public String toString(){
+        String ans = super.toString() + "       " + "Level: " + playerLevel + "       " + "Experience: " + expToString();
+        return ans;
     }
 
 }

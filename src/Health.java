@@ -17,5 +17,8 @@ public class Health {
     public void setHealthAmount(Integer i){
         healthAmount = i;
     }
+    public String toString(){
+        return healthAmount + "/" + healthPool;
+    }
 
 }

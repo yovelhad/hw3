@@ -6,4 +6,11 @@ public class Warrior extends Player{
         this.cooldown = cooldown;
         this.remainingCooldown = 0;
     }
+    public String coolDownToString(){
+        return remainingCooldown+"/"+cooldown;
+    }
+    public String toString(){
+        String ans = super.toString() + "       " + "Cooldown: " + coolDownToString();
+        return ans;
+    }
 }

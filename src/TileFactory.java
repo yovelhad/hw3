@@ -9,7 +9,10 @@ public class TileFactory {
     private List<Supplier<Player>> playersList;
     private Map<Character, Supplier<Enemy>> enemiesMap;
     private Player selected;
-
+    public Player getPlayer(Integer index){
+        List<Player> players = listPlayers();
+        return players.get(index);
+    }
     public TileFactory(){
         playersList = initPlayers();
         enemiesMap = initEnemies();
@@ -77,6 +80,12 @@ public class TileFactory {
 
     public List<Player> listPlayers(){
         return playersList.stream().map(Supplier::get).collect(Collectors.toList());
+    }
+    public void playersListToString(){
+        List<Player> playersList = listPlayers();
+        for(int i = 1; i<=playersList.size(); i++){
+            System.out.println(i+ "." + " " +  playersList.get(i-1).toString());
+        }
     }
 //
 //    // TODO: Add additional callbacks of your choice

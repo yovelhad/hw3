@@ -4,13 +4,18 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.sql.SQLOutput;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         BufferedReader reader;
         GameBoard gb;
         TileFactory factory = new TileFactory();
-        Player p1 = factory.listPlayers().get(0);//TODO show players list
+        System.out.println("Select a player:");
+        factory.playersListToString();
+        Scanner myScanner = new Scanner(System.in);
+        Integer playerIndex = myScanner.nextInt();
+        Player chosenPlayer = factory.getPlayer(playerIndex-1);//TODO show players list
         if (args.length != 1){
             System.out.println("error loading level folder");
             return;
@@ -19,10 +24,11 @@ public class Main {
             File[] listOfFiles = folder.listFiles();
             for (int i = 0; i < listOfFiles.length; i++) {
                 try {
+
                     reader = new BufferedReader(new FileReader(listOfFiles[i]));
                     //load level
-                    gb = new GameBoard(reader,p1);
-                    System.out.printf(gb.toString());
+                    gb = new GameBoard(reader,chosenPlayer);
+                    gb.printBoard();
                     //print board
 
                     //player action

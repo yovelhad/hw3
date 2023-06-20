@@ -36,6 +36,10 @@ public abstract class Unit extends Tile {
         Integer defenceValue = rand.nextInt(defensePoints+1);
         return defenceValue;
     }
+    public String toString(){
+        String ans = name+ "        " + "Health: " + health.toString() + "      " + "Attack: " + attackPoints + "       " + "Defence: " + defensePoints ;
+        return  ans ;
+    }
 
     public abstract void combat(Unit unit);
     public abstract void onDeath(Unit unit);

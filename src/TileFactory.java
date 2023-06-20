@@ -21,7 +21,7 @@ public class TileFactory {
         selected=p;
     }
     public Tile getTile(Character c, Position p){
-        System.out.println("Factory for:" + c);
+        //System.out.println("Factory for:" + c);
         Tile returnValue;
         switch (c){
             case '#':

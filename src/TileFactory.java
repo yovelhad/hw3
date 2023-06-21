@@ -21,7 +21,6 @@ public class TileFactory {
         selected=p;
     }
     public Tile getTile(Character c, Position p){
-        //System.out.println("Factory for:" + c);
         Tile returnValue;
         switch (c){
             case '#':
@@ -34,12 +33,14 @@ public class TileFactory {
                 returnValue = produceEmpty(p);
                 break;
             case '@':
-                returnValue = selected;
-                returnValue.setPosition(p);
+                returnValue = producePlayer(p);
+//                returnValue = selected;
+//                returnValue.setPosition(p);
                 break;
             default:
-                returnValue = enemiesMap.get(c).get();
-                returnValue.setPosition(p);
+                returnValue = produceEnemy(c,p);
+//                returnValue = enemiesMap.get(c).get();
+//                returnValue.setPosition(p);
         }
         return returnValue;
     }
@@ -90,13 +91,16 @@ public class TileFactory {
 //
 //    // TODO: Add additional callbacks of your choice
 //
-//    public Enemy produceEnemy(char tile, Position position, ...) {
-//        ...
-//    }
+    public Enemy produceEnemy(char tile, Position position) {
+        Enemy toProduce =  enemiesMap.get(tile).get();
+        toProduce.setPosition(position);
+        return toProduce;
+    }
 //
-//    public Player producePlayer(int idx, ...){
-//		...
-//    }
+    public Player producePlayer(Position p){
+        selected.setPosition(p);
+        return selected;
+    }
 //
     public Empty produceEmpty(Position p){
         return new Empty(p);

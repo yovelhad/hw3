@@ -1,3 +1,5 @@
+import com.sun.source.tree.WhileLoopTree;
+
 import javax.xml.transform.Source;
 import java.io.BufferedReader;
 import java.io.File;
@@ -30,6 +32,12 @@ public class Main {
                     gb = new GameBoard(reader,chosenPlayer);
                     gb.printBoard();
                     //print board
+                    char c = new Scanner(System.in).next().charAt(0);
+                    while (c == 'd' || c == 'w' || c == 'a' || c == 's'){ // need to add isAlive or numberOfenemies > 0
+                        // TICK
+                        gb.printBoard();
+                        c = new Scanner(System.in).next().charAt(0);
+                    }
 
                     //player action
 

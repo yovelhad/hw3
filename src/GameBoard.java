@@ -16,18 +16,17 @@ public class GameBoard {
         this.activePlayer = activePlayer;
         factory = new TileFactory();
         factory.setPlayer(activePlayer);
-        System.out.println("READ FILE:");
         List<String> boardString = new ArrayList<>();
         try {
             while ((line = reader.readLine()) != null) {
                 boardString.add(line);
-                System.out.println(line);
+                //System.out.println(line);
             }
 
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        System.out.println("Build board:");
+       // System.out.println("Build board:");
         Integer xAxis = boardString.get(0).length();
         Integer yAxis = boardString.size();
         this.BoardTiles = new Tile[yAxis][xAxis];

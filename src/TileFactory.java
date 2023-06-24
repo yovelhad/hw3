@@ -82,11 +82,13 @@ public class TileFactory {
     public List<Player> listPlayers(){
         return playersList.stream().map(Supplier::get).collect(Collectors.toList());
     }
-    public void playersListToString(){
+    public String playersListToString(){
+        String playersString = "";
         List<Player> playersList = listPlayers();
         for(int i = 1; i<=playersList.size(); i++){
-            System.out.println(i+ "." + " " +  playersList.get(i-1).toString());
+            playersString += i+ "." + " " +  playersList.get(i-1).toString() + "\n" ;
         }
+        return playersString;
     }
 //
 //    // TODO: Add additional callbacks of your choice
